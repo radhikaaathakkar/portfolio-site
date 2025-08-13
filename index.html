@@ -7,63 +7,139 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            animation: fadeIn 1.5s ease-out;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #007acc;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007acc;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        a:hover {
-            background-color: #005fa3;
-            transform: translateY(-3px);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media(max-width:600px){
-            h1 { font-size: 2.2em; }
-            p { font-size: 1em; }
-        }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f5f7fa; color: #333; }
+        a { text-decoration: none; color: inherit; }
+        header { background: #007acc; color: white; padding: 80px 20px; text-align: center; }
+        header h1 { font-size: 3em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; margin-bottom: 20px; }
+        header .btn { padding: 12px 25px; background: white; color: #007acc; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        header .btn:hover { background: #e6e6e6; transform: translateY(-3px); }
+
+        section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        h2 { color: #007acc; font-size: 2em; margin-bottom: 20px; text-align: center; }
+
+        .projects, .experience { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 300px; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        .card h3 { color: #007acc; margin-bottom: 10px; }
+        .card ul { margin-bottom: 10px; }
+        .card ul li { margin-bottom: 5px; font-size: 0.95em; }
+        .card a { display: inline-block; margin-top: 10px; padding: 8px 15px; background: #007acc; color: white; border-radius: 5px; transition: 0.3s; font-size: 0.9em; }
+        .card a:hover { background: #005fa3; transform: translateY(-2px); }
+
+        footer { background: #333; color: white; text-align: center; padding: 40px 20px; margin-top: 50px; }
+        footer a { color: #007acc; }
+        @media(max-width:768px) { .projects, .experience { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Radhika Thakkar</h1>
-        <p>Python Developer | Flask Enthusiast</p>
-        <p>Check out my banking project:</p>
-        <a href="https://github.com/radhikaaathakkar/unified-banking" target="_blank">View on GitHub</a>
+
+<header>
+    <h1>Radhika Thakkar</h1>
+    <p>Python Developer | DevOps & Flask Enthusiast</p>
+    <a class="btn" href="https://github.com/radhikaaathakkar" target="_blank">View GitHub</a>
+</header>
+
+<section>
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>GenOps Automation Framework</h3>
+            <ul>
+                <li>Automated operations pipeline using Python for streamlined data handling.</li>
+                <li>Designed for future deployment in DevOps or GenAI pipelines.</li>
+                <li>Version control using Git.</li>
+            </ul>
+            <a href="https://github.com/radhikaaathakkar/genops" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+            <h3>BookStore</h3>
+            <ul>
+                <li>Web app for managing book inventory and sales.</li>
+                <li>Developed using Python Flask for backend and MySQL for data storage.</li>
+                <li>User-friendly interface with HTML/CSS and Bootstrap.</li>
+            </ul>
+            <a href="https://github.com/radhikaaathakkar/BookStore" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+            <h3>Unified Banking</h3>
+            <ul>
+                <li>Full-stack banking app with merged statements and spending insights.</li>
+                <li>Flask backend with MySQL database and HTML/CSS frontend.</li>
+                <li>Enhanced financial management features for users.</li>
+            </ul>
+            <a href="https://github.com/radhikaaathakkar/unified-banking" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+            <h3>SmartUniNav</h3>
+            <ul>
+                <li>Smart navigation system for university campuses.</li>
+                <li>Implemented real-time route suggestions and campus mapping.</li>
+                <li>Python backend with interactive frontend interface.</li>
+            </ul>
+            <a href="https://github.com/radhikaaathakkar/smartuninav" target="_blank">View on GitHub</a>
+        </div>
+        <div class="card">
+            <h3>KnowledgeHub</h3>
+            <ul>
+                <li>Knowledge management platform for storing and sharing resources.</li>
+                <li>Developed using Flask and MySQL with clean UI/UX design.</li>
+                <li>Collaboration and data retrieval features for users.</li>
+            </ul>
+            <a href="https://github.com/radhikaaathakkar/knowledgehub" target="_blank">View on GitHub</a>
+        </div>
     </div>
+</section>
+
+<section>
+    <h2>Work Experience</h2>
+    <div class="experience">
+        <div class="card">
+            <h3>Rekruters (Noida) | Software Developer Intern</h3>
+            <ul>
+                <li>Built School Management System with Flask and MySQL.</li>
+                <li>Created dynamic interfaces with HTML, CSS, jQuery, Bootstrap.</li>
+                <li>Streamlined administrative tasks via digital workflows.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Grozoom Venture Technology (Pune) | DevOps Intern</h3>
+            <ul>
+                <li>Implemented Docker containers to reduce RAM usage by 35%.</li>
+                <li>Enhanced task efficiency by 40%.</li>
+                <li>Integrated Grafana and Prometheus for real-time monitoring.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Xebia (Remote) | DevOps Intern (Team Leader)</h3>
+            <ul>
+                <li>Led development of gym management system with city-wide role management.</li>
+                <li>Created test cases, documented APIs, and set up CI/CD pipeline.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Southern Federal University, Russia | Intern</h3>
+            <ul>
+                <li>Optimized database performance with indexing and normalization.</li>
+                <li>Collaborated on scalable system design ensuring data integrity.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p style="text-align:center; font-size:1.1em;">
+        📧 <a href="mailto:thakkarradhika13@gmail.com">thakkarradhika13@gmail.com</a> | 
+        📞 +91-9421411558 | 
+        🌐 <a href="https://www.linkedin.com/in/radhikathakkar11/" target="_blank">LinkedIn</a> | 
+        🖥 <a href="https://github.com/radhikaaathakkar" target="_blank">GitHub</a>
+    </p>
+</section>
+
+<footer>
+    &copy; 2025 Radhika Thakkar. All rights reserved.
+</footer>
+
 </body>
 </html>
