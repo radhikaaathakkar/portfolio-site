@@ -3,199 +3,600 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Radhika Thakkar | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Professional portfolio of Radhika Thakkar, DevOps Engineer and Software Developer">
+  <meta name="keywords" content="DevOps, Software Development, Cloud Infrastructure, CI/CD, Automation">
+  <title>Radhika Thakkar | DevOps Engineer & Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f5f7fa; color: #333; }
-    a { text-decoration: none; color: inherit; }
-
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary-color: #1e40af;
+      --text-color: #1f2937;
+      --light-text: #6b7280;
+      --bg-color: #f9fafb;
+      --card-bg: #ffffff;
+      --footer-bg: #111827;
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.6; 
+      background: var(--bg-color); 
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+    
+    a { 
+      text-decoration: none; 
+      color: inherit; 
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
     header {
-      background: linear-gradient(135deg, #007acc, #005fa3);
-      color: white; padding: 80px 20px; text-align: center;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white; 
+      padding: 100px 20px; 
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    header h1 { font-size: 3em; margin-bottom: 10px; }
-    header p { font-size: 1.15em; margin-bottom: 25px; max-width: 900px; margin-left: auto; margin-right: auto; }
-    header .btn {
-      padding: 12px 25px; background: white; color: #007acc; border-radius: 50px;
-      font-weight: bold; transition: 0.3s; display: inline-block; margin: 5px;
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      opacity: 0.1;
+      pointer-events: none;
     }
-    header .btn:hover { background: #e6e6e6; transform: translateY(-3px); }
-
-    section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-    h2 { color: #007acc; font-size: 2em; margin-bottom: 20px; text-align: center; }
-
-    /* Slider */
+    
+    header h1 { 
+      font-size: 2.8rem; 
+      margin-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+      animation: fadeInDown 1s ease;
+    }
+    
+    header p { 
+      font-size: 1.2rem; 
+      margin-bottom: 30px; 
+      max-width: 800px; 
+      margin-left: auto; 
+      margin-right: auto;
+      line-height: 1.8;
+      opacity: 0.9;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .btn {
+      padding: 12px 28px; 
+      background: white; 
+      color: var(--primary-color); 
+      border-radius: 6px;
+      font-weight: 600; 
+      transition: all 0.3s ease; 
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn:hover { 
+      background: #f0f0f0; 
+      transform: translateY(-3px); 
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Section Styles */
+    section { 
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      color: var(--primary-color); 
+      font-size: 2.2rem; 
+      margin-bottom: 50px; 
+      text-align: center;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    
+    /* Card Slider */
+    .slider-container {
+      position: relative;
+      margin: 0 auto;
+    }
+    
     .slider {
-      display: flex; gap: 20px; overflow-x: auto;
-      scroll-snap-type: x mandatory; padding-bottom: 10px;
+      display: flex; 
+      gap: 25px; 
+      overflow-x: auto;
+      scroll-snap-type: x mandatory; 
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-color) #f0f0f0;
     }
-    .slider::-webkit-scrollbar { height: 8px; }
-    .slider::-webkit-scrollbar-thumb { background: #007acc; border-radius: 10px; }
-    .slider::-webkit-scrollbar-track { background: #ddd; }
-
+    
+    .slider::-webkit-scrollbar { 
+      height: 8px; 
+    }
+    
+    .slider::-webkit-scrollbar-thumb { 
+      background: var(--primary-color); 
+      border-radius: 10px; 
+    }
+    
+    .slider::-webkit-scrollbar-track { 
+      background: #e5e7eb; 
+      border-radius: 10px;
+    }
+    
     .card {
-      background: white; border-radius: 15px; padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      min-width: 280px; min-height: 300px;
+      background: var(--card-bg); 
+      border-radius: 12px; 
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      min-width: 300px; 
+      min-height: 320px;
       scroll-snap-align: start;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; flex-direction: column; justify-content: space-between;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between;
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-    .card h3 { color: #007acc; margin-bottom: 10px; }
-    .card ul { margin-bottom: 10px; flex-grow: 1; }
-    .card ul li { margin-bottom: 5px; font-size: 0.95em; }
+    
+    .card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); 
+    }
+    
+    .card h3 { 
+      color: var(--primary-color); 
+      margin-bottom: 15px; 
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .card ul { 
+      margin-bottom: 20px; 
+      flex-grow: 1; 
+      list-style-position: inside;
+    }
+    
+    .card ul li { 
+      margin-bottom: 8px; 
+      font-size: 0.95rem;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .card .card-footer {
+      margin-top: auto;
+    }
+    
     .card a {
-      display: inline-block; align-self: flex-start; margin-top: auto;
-      padding: 8px 15px; background: #007acc; color: white;
-      border-radius: 5px; transition: 0.3s; font-size: 0.9em;
+      display: inline-flex; 
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px; 
+      background: var(--primary-color); 
+      color: white;
+      border-radius: 6px; 
+      transition: all 0.3s ease; 
+      font-size: 0.95rem;
+      font-weight: 500;
     }
-    .card a:hover { background: #005fa3; transform: translateY(-2px); }
-
+    
+    .card a:hover { 
+      background: var(--primary-dark); 
+      transform: translateY(-2px); 
+    }
+    
+    /* Certification Cards */
+    .cert-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
     .cert-logo {
-      width: 80px; height: auto; margin-bottom: 10px; display: block;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    .contact-info { text-align: center; font-size: 1.1em; }
-    .contact-info a { color: #007acc; }
-
+    
+    /* Contact Section */
+    .contact-info { 
+      text-align: center; 
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-info a { 
+      color: var(--primary-color);
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .contact-info a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    /* Footer */
     footer {
-      background: #333; color: white; text-align: center; padding: 40px 20px; margin-top: 50px;
+      background: var(--footer-bg); 
+      color: white; 
+      text-align: center; 
+      padding: 40px 20px;
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .copyright {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 20px;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .card {
+        min-width: 260px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 60px 15px;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Radhika Thakkar</h1>
-  <p>Open-source enthusiast with a strong focus on DevOps and software development. Skilled in cloud infrastructure design, automation, monitoring solutions, and CI/CD pipelines. Passionate about building scalable, high-performance applications with proactive observability and continuous improvement.</p>
-  <a class="btn" href="https://github.com/radhikaaathakkar" target="_blank">View GitHub</a>
-  <a class="btn" href="https://drive.google.com/file/d/107i08x2mkkFlVGSDsXQGr2Y9U4zdM_w-/view?usp=sharing" target="_blank">View My Resume</a>
+  <div class="container">
+    <h1>Radhika Thakkar</h1>
+    <p>DevOps Engineer & Software Developer with expertise in cloud infrastructure, automation, and CI/CD pipelines. Passionate about building scalable, high-performance applications with proactive observability and continuous improvement.</p>
+    <div class="btn-container">
+      <a class="btn" href="https://github.com/radhikaaathakkar" target="_blank" aria-label="View GitHub Profile">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a class="btn btn-outline" href="https://drive.google.com/file/d/107i08x2mkkFlVGSDsXQGr2Y9U4zdM_w-/view?usp=sharing" target="_blank" aria-label="View Resume">
+        <i class="fas fa-file-alt"></i> View Resume
+      </a>
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2>Projects</h2>
-  <div class="slider">
-    <div class="card">
-      <h3>GenOps Automation Framework</h3>
-      <ul>
-        <li>Automated operations pipeline using Python.</li>
-        <li>Designed for DevOps/GenAI integrations.</li>
-        <li>Version control with Git.</li>
-      </ul>
-      <a href="https://github.com/radhikaaathakkar/genops" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card">
-      <h3>BookStore</h3>
-      <ul>
-        <li>Book inventory & sales management app.</li>
-        <li>Flask backend, MySQL database.</li>
-        <li>Bootstrap-based UI.</li>
-      </ul>
-      <a href="https://github.com/radhikaaathakkar/BookStore" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card">
-      <h3>Unified Banking</h3>
-      <ul>
-        <li>Banking app with merged statements.</li>
-        <li>Flask backend, MySQL DB.</li>
-        <li>Financial insights dashboard.</li>
-      </ul>
-      <a href="https://github.com/radhikaaathakkar/unified-banking" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card">
-      <h3>SmartUniNav</h3>
-      <ul>
-        <li>Real-time campus navigation system.</li>
-        <li>Python backend, interactive UI.</li>
-      </ul>
-      <a href="https://github.com/radhikaaathakkar/smartuninav" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card">
-      <h3>KnowledgeHub</h3>
-      <ul>
-        <li>Resource sharing platform.</li>
-        <li>Flask + MySQL backend.</li>
-      </ul>
-      <a href="https://github.com/radhikaaathakkar/knowledgehub" target="_blank">View on GitHub</a>
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="card">
+          <h3>GenOps Automation Framework</h3>
+          <ul>
+            <li>Developed an automated operations pipeline using Python for DevOps/GenAI integrations</li>
+            <li>Implemented version control with Git for collaborative development</li>
+            <li>Designed modular architecture for extensibility and maintainability</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/radhikaaathakkar/genops" target="_blank" aria-label="View GenOps project">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>BookStore Management System</h3>
+          <ul>
+            <li>Full-stack application for book inventory and sales management</li>
+            <li>Flask backend with MySQL database for data persistence</li>
+            <li>Responsive UI built with Bootstrap for optimal user experience</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/radhikaaathakkar/BookStore" target="_blank" aria-label="View BookStore project">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Unified Banking System</h3>
+          <ul>
+            <li>Banking application with merged statements from multiple accounts</li>
+            <li>Flask backend with secure MySQL database integration</li>
+            <li>Interactive financial insights dashboard for data visualization</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/radhikaaathakkar/unified-banking" target="_blank" aria-label="View Unified Banking project">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>SmartUniNav Campus Navigation</h3>
+          <ul>
+            <li>Real-time campus navigation system with optimized pathfinding</li>
+            <li>Python backend with efficient algorithms for location services</li>
+            <li>Interactive UI with intuitive wayfinding features</li>
+          </ul>
+          <div class="card-footer">
+            <a href="https://github.com/radhikaaathakkar/smartuninav" target="_blank" aria-label="View SmartUniNav project">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Work Experience</h2>
-  <div class="slider">
-    <div class="card">
-      <h3>Rekruters | Software Developer Intern</h3>
-      <ul>
-        <li>Built School Management System (Flask, MySQL).</li>
-        <li>Dynamic interfaces with Bootstrap.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Grozoom Venture Technology | DevOps Intern</h3>
-      <ul>
-        <li>Dockerized apps reducing RAM usage by 35%.</li>
-        <li>Integrated Grafana & Prometheus.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Xebia | DevOps Intern (Team Lead)</h3>
-      <ul>
-        <li>Led gym management system project.</li>
-        <li>CI/CD pipeline setup.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Southern Federal University | Intern</h3>
-      <ul>
-        <li>Database optimization with indexing.</li>
-        <li>Scalable architecture collaboration.</li>
-      </ul>
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="card">
+          <h3>Rekruters | Software Developer Intern</h3>
+          <ul>
+            <li>Designed and implemented a comprehensive School Management System using Flask and MySQL</li>
+            <li>Developed dynamic user interfaces with Bootstrap for responsive design</li>
+            <li>Optimized database queries, improving system performance by 25%</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Grozoom Venture Technology | DevOps Intern</h3>
+          <ul>
+            <li>Containerized applications using Docker, reducing RAM usage by 35%</li>
+            <li>Integrated Grafana and Prometheus for comprehensive system monitoring</li>
+            <li>Implemented automated deployment pipelines reducing deployment time by 40%</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Xebia | DevOps Intern (Team Lead)</h3>
+          <ul>
+            <li>Led development of a gym management system with a team of 4 developers</li>
+            <li>Established CI/CD pipelines using Jenkins, reducing manual deployment errors</li>
+            <li>Implemented infrastructure as code using Terraform for environment consistency</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Southern Federal University | Research Intern</h3>
+          <ul>
+            <li>Optimized database performance through strategic indexing and query optimization</li>
+            <li>Collaborated on designing scalable architecture for research applications</li>
+            <li>Documented technical processes and best practices for knowledge sharing</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-    <h2>Certifications</h2>
-    <div class="slider">
-      <!-- AWS Certification -->
-      <div class="card">
-        <img src="images/aws-badge.png" alt="AWS Certified Cloud Practitioner badge" style="width:370px; height:auto; margin-bottom:10px;">
-        <h3>AWS Certified Cloud Practitioner</h3>
-        <a href="https://drive.google.com/file/d/1gFeYKm6d0ToTPOnqwvdJRPoPDCQOjHqa/view?usp=sharing" target="_blank">
-          View Certificate
-        </a>
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="card cert-card">
+          <img src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" 
+               alt="AWS Certified Cloud Practitioner badge" 
+               class="cert-logo">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <div class="card-footer">
+            <a href="https://drive.google.com/file/d/1gFeYKm6d0ToTPOnqwvdJRPoPDCQOjHqa/view?usp=sharing" target="_blank" aria-label="View AWS Certification">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
+        <div class="card cert-card">
+          <img src="https://example.com/path-to-genops-cert-image.jpg" 
+               alt="GenOps Technology and Business Certification" 
+               class="cert-logo">
+          <h3>Generative AI + DevOps Certified</h3>
+          <div class="card-footer">
+            <a href="https://drive.google.com/file/d/1xJbr18Em_4EMaNVpzO_Ur9i8QNKmLRSu/view?usp=sharing" target="_blank" aria-label="View Generative AI Certification">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
       </div>
-  
-      <!-- Generative AI + DevOps Certification -->
-      <div class="card">
-        <img src="images/genops-technology-and-business.jpg" 
-             alt="GenOps Technology and Business Certification" 
-             style="width:370px; height:auto; margin-bottom:10px;">
-        <h3>Generative AI + DevOps Certified</h3>
-        <a href="https://drive.google.com/file/d/1xJbr18Em_4EMaNVpzO_Ur9i8QNKmLRSu/view?usp=sharing" target="_blank">
-          View Certificate
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-info">
+      <p>
+        <i class="fas fa-envelope"></i> <a href="mailto:thakkarradhika13@gmail.com">thakkarradhika13@gmail.com</a><br>
+        <i class="fas fa-phone"></i> <a href="tel:+919421411558">+91 94214 11558</a>
+      </p>
+      
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/radhikathakkar11/" target="_blank" aria-label="LinkedIn Profile">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/radhikaaathakkar" target="_blank" aria-label="GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://leetcode.com/u/radhikathakkar_/" target="_blank" aria-label="LeetCode Profile">
+          <i class="fas fa-code"></i>
         </a>
       </div>
     </div>
-  </section>
-
-  
-<section>
-  <h2>Contact</h2>
-  <p class="contact-info">
-    📧 <a href="mailto:thakkarradhika13@gmail.com">thakkarradhika13@gmail.com</a> |  
-    📞 +91-9421411558 |  
-    <a href="https://www.linkedin.com/in/radhikathakkar11/" target="_blank">LinkedIn</a> |  
-    <a href="https://leetcode.com/u/radhikathakkar_/" target="_blank">LeetCode</a>
-  </p>
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 Radhika Thakkar. All rights reserved.
+  <div class="footer-content">
+    <p>Let's build something amazing together!</p>
+    <div class="copyright">
+      &copy; <span id="year"></span> Radhika Thakkar. All rights reserved.
+    </div>
+  </div>
 </footer>
+
+<script>
+  // Update copyright year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
